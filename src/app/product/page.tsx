@@ -9,6 +9,7 @@ import {GrGraphQl} from "react-icons/gr";
 import {FaAndroid, FaJava, FaPython, FaRust} from "react-icons/fa";
 import {TbBrandCpp} from "react-icons/tb";
 import CTFCard from "@/app/components/ctfimagecard";
+import HeaderComponent from "@/app/components/header";
 
 
 export default function Contact() {
@@ -16,30 +17,7 @@ export default function Contact() {
         <>
             <div className={"bg-white flex flex-col items-center justify-center min-h-screen min-w-min"}>
                 <main className={"bg-white min-h-screen min-w-full"}>
-                    <div className={"items-center flex flex-row min-h-min bg-emerald-600"}>
-                        <Image src={"/favicons/favicon-32x32.png"} alt={"icon"} className={"m-2"} width={30}
-                               height={30}/>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/home"} className={"hover:underline"}>
-                                Home
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/ctf"} className={"hover:underline"}>
-                                CTF
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/blog"} className={"hover:underline"}>
-                                Blog
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/product"} className={"hover:underline"}>
-                                Product
-                            </Link>
-                        </div>
-                    </div>
+                    <HeaderComponent />
                     <div className={"flex flex-col items-center justify-center"}>
                         <div className={"flex flex-col m-16 "}>
                             <p className={"text-8xl animate-pulse text-emerald-600"}>Product</p>

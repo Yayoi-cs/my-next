@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {FormEvent, useEffect, useState} from "react";
 import nextConfig from "../../../next.config.mjs";
+import HeaderComponent from "@/app/components/header";
 const BasePath = nextConfig.basePath || ""
 
 export default function Home() {
@@ -54,30 +55,7 @@ export default function Home() {
         <>
             <div className={"bg-white flex flex-col items-center justify-center min-h-screen min-w-full"}>
                 <main className={"bg-white min-h-screen min-w-full"}>
-                    <div className={"items-center flex flex-row min-h-min bg-emerald-600"}>
-                        <Image src={"/favicons/favicon-32x32.png"} alt={"icon"} className={"m-2"} width={30}
-                               height={30}/>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/home"} className={"hover:underline"}>
-                                Home
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/ctf"} className={"hover:underline"}>
-                                CTF
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/blog"} className={"hover:underline"}>
-                                Blog
-                            </Link>
-                        </div>
-                        <div className={"p-4 rounded-3xl text-white"}>
-                            <Link href={"/product"} className={"hover:underline"}>
-                                Product
-                            </Link>
-                        </div>
-                    </div>
+                    <HeaderComponent />
                     <div
                         className={"flex flex-row min-h-min min-w-min shadow-2xl shadow-emerald-300 items-center justify-start self-center m-16"}>
                         <img className={"m-6 shadow-2xl slide-img"} src={imageUrl} alt={"image"}/>
