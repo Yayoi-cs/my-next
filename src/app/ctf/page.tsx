@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import CTFCard from "@/app/components/ctfimagecard";
 
 export default function Home() {
 
@@ -9,6 +10,81 @@ export default function Home() {
         return new Promise((resolve) => setTimeout(resolve, ms))
     }
 
+    const ctfData = [
+        {
+            title: "0x1 PicoCTF2024",
+            imgSrc: "/images/pico.png",
+            altText: "pico image",
+            participant: "Jp student solo",
+            rank: "7th"
+        },
+        {
+            title: "0x2 WaniCTF2024",
+            imgSrc: "/images/wani.png",
+            altText: "wani image",
+            participant: "Team : SUSHI1ST",
+            rank: "8th"
+        },
+        {
+            title: "0x3 DiverOSINT CTF",
+            imgSrc: "/images/diver.png",
+            altText: "diver image",
+            participant: "Team : UFO_TH_JP",
+            rank: "10th"
+        },
+        {
+            title: "0x4 WaniCTF2024",
+            imgSrc: "/images/ctf4b.png",
+            altText: "ctf4b image",
+            participant: "Team : NITKC",
+            rank: "28th"
+        },
+        {
+            title: "0x5 N00BZCTF 2024",
+            imgSrc: "/images/noobz.png",
+            altText: "noobz image",
+            participant: "Team : SUSHI1ST",
+            rank: "32nd"
+        },
+        {
+            title: "0x6 AlpacaHack test1",
+            imgSrc: "/images/alpaca1.png",
+            altText: "alpaca image",
+            participant: "Solo @ k0080",
+            rank: "17th"
+        }
+    ];
+
+    const badgeData = [
+        {
+            title: "7 day streak",
+            imgSrc: "/images/k0080-badges-7-day-streak.png",
+            altText: "pico image",
+            participant: "",
+            rank: "7 day streak"
+        },
+        {
+            title: "Hash Cracker",
+            imgSrc: "/images/k0080-badges-hash-cracker.png",
+            altText: "wani image",
+            participant: "",
+            rank: "Hash Cracker"
+        },
+        {
+            title: "OhSINT",
+            imgSrc: "/images/k0080-badges-ohsint.png",
+            altText: "diver image",
+            participant: "",
+            rank: "OhSINT"
+        },
+        {
+            title: "cat linux.txt",
+            imgSrc: "/images/k0080-badges-terminaled.png",
+            altText: "ctf4b image",
+            participant: "",
+            rank: "cat linux.txt"
+        }
+    ];
 
     return (
         <>
@@ -49,90 +125,16 @@ export default function Home() {
                             <p className={"text-2xl"}>B3 A G00D H4CK3R -CTF-</p>
                         </div>
                         <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
-                            <div>
-                                <span className={"text-3xl text-emerald-600"}>0x1 picoCTF2024</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/pico.png"} alt={"pico image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Jp student Solo</p>
-                                        <p className={"text-emerald-600 text-4xl"}>7th</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <span className={"text-3xl bold text-emerald-600"}>0x2 WaniCTF2024</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/wani.png"} alt={"wani image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Team : SUSHI1ST</p>
-                                        <p className={"text-emerald-600 text-4xl"}>8th</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <span className={"text-3xl bold text-emerald-600"}>0x3 DiverOSINT CTF</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/diver.png"} alt={"diver image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Team : UFO_TH_JP</p>
-                                        <p className={"text-emerald-600 text-4xl"}>10th</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <span className={"text-3xl bold text-emerald-600"}>0x4 WaniCTF2024</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/ctf4b.png"} alt={"ctf4b image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Team : NITKC</p>
-                                        <p className={"text-emerald-600 text-4xl"}>28th</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <span className={"text-3xl bold text-emerald-600"}>0x5 N00BZCTF 2024</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/noobz.png"} alt={"noobz image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Team : SUSHI1ST</p>
-                                        <p className={"text-emerald-600 text-4xl"}>32nd</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <span className={"text-3xl bold text-emerald-600"}>0x6 AlpacaHack test1</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/alpaca1.png"} alt={"alpaca image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Solo @ k0080</p>
-                                        <p className={"text-emerald-600 text-4xl"}>17th</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
+                            {ctfData.map((ctf, index) => (
+                                <CTFCard
+                                    title={ctf.title}
+                                    imgSrc={ctf.imgSrc}
+                                    altText={ctf.altText}
+                                    participant={ctf.participant}
+                                    rank={ctf.rank}
+                                    description={""}
+                                />
+                            ))}
                         </div>
                         <div className={"flex flex-col m-2"}>
                             <p className={"text-2xl"}>B3 A 1NT3ll3CTU41 H4CK3R -<a
@@ -141,55 +143,17 @@ export default function Home() {
                         </div>
                         <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
                             <span className={"text-3xl bold text-emerald-600"}>0x1 Badges</span><br/><br/>
-                            <div>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/k0080-badges-7-day-streak.png"} alt={"pico image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <span className={"text-3xl text-emerald-600"}>7 day streak</span>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/k0080-badges-hash-cracker.png"} alt={"wani image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <span className={"text-3xl text-emerald-600"}>Hash Cracker</span>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/k0080-badges-ohsint.png"} alt={"diver image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <span className={"text-3xl text-emerald-600"}>OhSINT</span>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
-                            <div>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/k0080-badges-terminaled.png"} alt={"ctf4b image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <span
-                                            className={"text-3xl bold text-emerald-600"}>cat linux.txt</span>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
+                            {badgeData.map((badge, index) => (
+                                <CTFCard
+                                    key={index}
+                                    title={badge.title}
+                                    imgSrc={badge.imgSrc}
+                                    altText={badge.altText}
+                                    participant={badge.participant}
+                                    rank={badge.rank}
+                                    description={""}
+                                />
+                            ))}
                             <span className={"text-3xl bold text-emerald-600"}>0x2 Completed Rooms</span><br/><br/>
                             <a href={"https://tryhackme.com/r/room/x8664arch"}
                                className={"text-emerald-600 hover:underline m-1"}>[x86 Architecture
@@ -267,16 +231,6 @@ export default function Home() {
                 </main>
 
             </div>
-            <style jsx>
-                {`
-                    .ctf-img {
-                        display: block;
-                        width: 50%;
-                        height: 50%;
-                        object-fit: cover;
-                    }
-                `}
-            </style>
         </>
     )
 }

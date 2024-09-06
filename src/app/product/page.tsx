@@ -8,6 +8,8 @@ import {BiLogoGoLang} from "react-icons/bi";
 import {GrGraphQl} from "react-icons/gr";
 import {FaAndroid, FaJava, FaPython, FaRust} from "react-icons/fa";
 import {TbBrandCpp} from "react-icons/tb";
+import CTFCard from "@/app/components/ctfimagecard";
+
 
 export default function Contact() {
     return (
@@ -45,23 +47,8 @@ export default function Contact() {
                         <div className={"flex flex-col m-2"}>
                             <p className={"text-2xl"}>B3 A C00L C35T0R</p>
                         </div>
-                        <div className={"p-5 flex flex-col border-t-2 border-t-emerald-500"}>
-                            <div>
-                                <span className={"text-3xl text-emerald-600"}>0x1 HackU TOKYO VOL2</span><br/><br/>
-                                <div className={"flex flex-row items-center"}>
-                                    <img src={"/images/achyu1.png"} alt={"pico image"}
-                                         className={"ctf-img shadow-emerald-300 shadow-2xl"}/>
-                                    <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
-                                        <p className={"text-2xl"}>Emergency social media</p>
-                                        <p className={"text-emerald-600 text-4xl"}>AchyU</p>
-                                        <br />
-                                        <p>Next.js & Golang</p>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </div>
+                        <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
+                            <CTFCard title={"0x1 HackU TOKYO VOL2"} imgSrc={"/images/achyu1.png"} altText={""} participant={"Emergency social media"} rank={"AchyU"} description={"Next.js & Golang"} />
                         </div>
                         <div className={"p-5 flex flex-row"}>
                             <div className={"flex flex-col shadow-2xl shadow-emerald-300 h-48 w-64 p-4 m-3 rounded-2xl"}>

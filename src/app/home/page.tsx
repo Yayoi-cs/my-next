@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import {FormEvent, useEffect, useState} from "react";
+import nextConfig from "../../../next.config.mjs";
+const BasePath = nextConfig.basePath || ""
 
 export default function Home() {
 
@@ -36,7 +38,7 @@ export default function Home() {
         const imageSlider = async () => {
             let i = 1
             while (true) {
-                setImageUrl("/images/portfolio" + i.toString() + ".jpg")
+                setImageUrl(BasePath+  "/images/portfolio" + i.toString() + ".jpg")
                 i = (i + 1) % 3 + 1
                 await sleep(10000)
             }
@@ -45,7 +47,7 @@ export default function Home() {
     }, []);
 
     const handleClick = (e: FormEvent<HTMLParagraphElement>, i: number) => {
-        setImageUrl("/images/portfolio" + i.toString() + ".jpg")
+        setImageUrl(BasePath + "/images/portfolio" + i.toString() + ".jpg")
     }
 
     return (
