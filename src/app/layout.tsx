@@ -19,11 +19,11 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            <link rel="apple-touch-icon" sizes="180x180" href={BasePath + "/favicons/apple-touch-icon.png"}/>
-            <link rel="icon" type="image/png" sizes="32x32" href={BasePath + "/favicons/favicon-32x32.png"}/>
-            <link rel="icon" type="image/png" sizes="16x16" href={BasePath + "/favicons/favicon-16x16.png"}/>
-            <link rel="manifest" href={BasePath + "/favicons/site.webmanifest"}/>
-            <link rel="mask-icon" href={BasePath + "/favicons/safari-pinned-tab.svg"} color="#5bbad5"/>
+            <link type={"image/x-icon"} rel="apple-touch-icon" sizes="180x180" href={BasePath + "/favicons/apple-touch-icon.png"}/>
+            <link type={"image/x-icon"} rel="icon" sizes="32x32" href={BasePath + "/favicons/favicon-32x32.png"}/>
+            <link type={"image/x-icon"} rel="icon" sizes="16x16" href={BasePath + "/favicons/favicon-16x16.png"}/>
+            <link type={"image/x-icon"} rel="manifest" href={BasePath + "/favicons/site.webmanifest"}/>
+            <link type={"image/x-icon"} rel="mask-icon" href={BasePath + "/favicons/safari-pinned-tab.svg"} color="#5bbad5"/>
             <meta name="msapplication-TileColor" content="#da532c"/>
             <meta name="theme-color" content="#ffffff"/>
         </head>
