@@ -6,10 +6,6 @@ import CTFCard from "@/app/components/ctfimagecard";
 
 export default function Home() {
 
-    const sleep = async (ms: number) => {
-        return new Promise((resolve) => setTimeout(resolve, ms))
-    }
-
     const ctfData = [
         {
             title: "0x1 PicoCTF2024",
