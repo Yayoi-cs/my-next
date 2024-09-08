@@ -29,7 +29,7 @@ export default function Home() {
             rank: "10th"
         },
         {
-            title: "0x4 WaniCTF2024",
+            title: "0x4 CTF4B 2024",
             imgSrc: "/images/ctf4b.png",
             altText: "ctf4b image",
             participant: "Team : NITKC",
@@ -199,6 +199,16 @@ export default function Home() {
                             <a href={"https://tryhackme.com/r/room/crackthehash"}
                                className={"text-emerald-600 hover:underline m-1"}>[Crack the
                                 hash](https://tryhackme.com/r/room/crackthehash) </a>
+                            <a href={"https://tryhackme.com/r/room/hypervisorinternals"}
+                               className={"text-emerald-600 hover:underline m-1"}>[Hypervisor 
+															 Internals](https://tryhackme.com/r/room/hypervisorinternals) </a>
+                             <a href={"https://tryhackme.com/r/room/hostedhypervisors"}
+                               className={"text-emerald-600 hover:underline m-1"}>[Hosted 
+															 Hypervisors](https://tryhackme.com/r/room/hostedhypervisors) </a>
+                              <a href={"https://tryhackme.com/r/room/introtocoldsystemforensics"}
+                               className={"text-emerald-600 hover:underline m-1"}>[Intro to Cold System 
+															 Forensics](https://tryhackme.com/r/room/introtocoldsystemforensics) </a>
+ 
                         </div>
                     </div>
                 </main>
