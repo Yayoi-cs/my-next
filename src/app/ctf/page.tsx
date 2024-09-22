@@ -18,7 +18,7 @@ export default function Home() {
             title: "0x2 WaniCTF2024",
             imgSrc: "/images/wani.png",
             altText: "wani image",
-            participant: "Team : SUSHI1ST",
+            participant: "Team : SUSH1st",
             rank: "8th"
         },
         {
@@ -39,7 +39,7 @@ export default function Home() {
             title: "0x5 N00BZCTF 2024",
             imgSrc: "/images/noobz.png",
             altText: "noobz image",
-            participant: "Team : SUSHI1ST",
+            participant: "Team : SUSH1st",
             rank: "32nd"
         },
         {
@@ -47,6 +47,13 @@ export default function Home() {
             imgSrc: "/images/alpaca1.png",
             altText: "alpaca image",
             participant: "Solo @ k0080",
+            rank: "17th"
+        },
+				{
+            title: "0x7 IERAE CTF 2024",
+            imgSrc: "/images/ierae.png",
+            altText: "ierae image",
+            participant: "Team : SUSH1st",
             rank: "17th"
         }
     ];
@@ -208,6 +215,9 @@ export default function Home() {
                               <a href={"https://tryhackme.com/r/room/introtocoldsystemforensics"}
                                className={"text-emerald-600 hover:underline m-1"}>[Intro to Cold System 
 															 Forensics](https://tryhackme.com/r/room/introtocoldsystemforensics) </a>
+                               <a href={"https://tryhackme.com/r/room/forensicimaging"}
+                               className={"text-emerald-600 hover:underline m-1"}>[Forensic 
+															 Imaging](https://tryhackme.com/r/room/forensicimaging) </a>
  
                         </div>
                     </div>

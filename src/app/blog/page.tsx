@@ -17,6 +17,34 @@ export default function Blog() {
                         </div>
                         <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
                             <div className={"flex flex-col"}>
+																<div className={"flex flex-row"}>
+                                    <p className={"m-2 text-emerald-600 text-4xl"}>0x9</p>
+                                    <div>
+                                        <p className={"m-2 text-2xl"}>UrmiaCTF Writeup!</p>
+                                        <p className={"m-2"}>
+                                            I played Urmia CTF2024 in a short time.<br/>
+                                            I wrote a writeup for funny pwn challenge!<br />
+                                            <a className={"text-emerald-600 hover:underline"}
+                                               href={"https://hackmd.io/@tsuneki/HyOELF220"}>
+                                                [HackMD]writeup!
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+																<div className={"flex flex-row"}>
+                                    <p className={"m-2 text-emerald-600 text-4xl"}>0x8</p>
+                                    <div>
+                                        <p className={"m-2 text-2xl"}>LIT CTF Writeup!</p>
+                                        <p className={"m-2"}>
+                                            I played LIT CTF2024 and solve some pwn challenge.<br/>
+                                            Both of challenge is quite fun!<br />
+                                            <a className={"text-emerald-600 hover:underline"}
+                                               href={"https://hackmd.io/@tsuneki/rkCGIIucC"}>
+                                                [HackMD]writeup!
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
                                 <div className={"flex flex-row"}>
                                     <p className={"m-2 text-emerald-600 text-4xl"}>0x7</p>
                                     <div>
