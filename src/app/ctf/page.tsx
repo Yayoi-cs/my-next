@@ -54,7 +54,7 @@ export default function Home() {
             imgSrc: "/images/ierae.png",
             altText: "ierae image",
             participant: "Team : SUSH1st",
-            rank: "17th"
+            rank: "4th"
         }
     ];
 
