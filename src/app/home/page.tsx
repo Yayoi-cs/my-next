@@ -97,7 +97,7 @@ export default function Home() {
                                 This idea is hardly effected by Golang.There's no exception.<br/>
                                 Only the known error exists in not only code, but also all of my life.<br/><br/>
                                 <span className={"text-2xl bold text-emerald-600"}>0x5 Contact me!</span><br/>
-                                If you want to contact to me, check my information at <Link href={"#"} className={"text-emerald-600 hover:underline"}>here</Link>!<br/>
+                                If you want to contact to me, check my github!<br/>
                             </p>
                         </div>
                         <div className={"p-2"}>
