@@ -55,7 +55,15 @@ export default function Home() {
             altText: "ierae image",
             participant: "Team : SUSH1st",
             rank: "4th"
-        }
+        },
+				{
+            title: "0x8 JPN-UKR CTF",
+            imgSrc: "/images/jpn-ukraina.jpg",
+            altText: "jpn-ukraina image",
+            participant: "Team : SUSH1st",
+            rank: "5th"
+        },
+
     ];
 
     const badgeData = [
