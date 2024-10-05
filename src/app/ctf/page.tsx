@@ -63,6 +63,13 @@ export default function Home() {
             participant: "Team : SUSH1st",
             rank: "5th"
         },
+				{
+            title: "0x8 AlpacaHack Round4",
+            imgSrc: "/images/alpaca4.png",
+            altText: "Alpaca4 image",
+            participant: "Solo @ k0080",
+            rank: "36th"
+        },
 
     ];
 
