@@ -28,7 +28,7 @@ export default function Contact() {
                         <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
                             <CTFCard title={"0x1 HackU TOKYO VOL2"} imgSrc={"/images/achyu1.png"} altText={""} participant={"Emergency social media"} rank={"AchyU"} description={"Next.js & Golang"} />
                         </div>
-                        <div className={"p-5 flex flex-row"}>
+                        <div className={"p-5 flex flex-wrap items-center justify-center"}>
                             <div className={"flex flex-col shadow-2xl shadow-emerald-300 h-48 w-64 p-4 m-3 rounded-2xl"}>
                                 <span className={"text-2xl text-emerald-600"}>0x2</span>
                                 <p className={"text-emerald-600 text-2xl"}>Diary with AI</p>
@@ -105,8 +105,6 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className={"p-5 flex flex-row"}>
                             <div className={"flex flex-col shadow-2xl shadow-emerald-300 h-48 w-64 p-4 m-3 rounded-2xl"}>
                                 <span className={"text-2xl text-emerald-600"}>0x7</span>
                                 <p className={"text-emerald-600 text-2xl"}>Code Typing</p>
