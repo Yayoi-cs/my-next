@@ -70,6 +70,13 @@ export default function Home() {
             participant: "Solo @ k0080",
             rank: "36th"
         },
+				{
+            title: "0x9 SECCON13",
+            imgSrc: "/images/seccon13.png",
+            altText: "seccon13 image",
+            participant: "Team : ierae",
+            rank: "2nd🥈"
+        },
 
     ];
 
