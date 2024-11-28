@@ -78,7 +78,9 @@ export default function Home() {
             rank: "2nd🥈"
         },
 
-    ];
+    ].reverse();
+
+		//ctfData = ctfData.reverse()
 
     const badgeData = [
         {
@@ -129,6 +131,7 @@ export default function Home() {
                         <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
                             {ctfData.map((ctf, index) => (
                                 <CTFCard
+																		key={ctf.title}
                                     title={ctf.title}
                                     imgSrc={ctf.imgSrc}
                                     altText={ctf.altText}
