@@ -1,21 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import {FormEvent, useEffect, useState} from "react";
 import nextConfig from "../../../next.config.mjs";
-import HeaderComponent from "@/app/components/header";
+
 const BasePath = nextConfig.basePath || ""
+import HeaderComponent from "@/app/components/header";
+import BlogCard from "@/app/components/blogCard";
+import {blogData} from "@/app/components/blogData";
 
 export default function Home() {
 
     const [hello, setHello] = useState<string>("")
     const [world, setWorld] = useState<string>("")
-    const [flag] = useState<string>("flag{Y0u_f1nd_m3??}")
 
     const sleep = async (ms: number) => {
         return new Promise((resolve) => setTimeout(resolve, ms))
     }
+
 
     useEffect(() => {
         const typingHello = async () => {
@@ -33,76 +35,53 @@ export default function Home() {
         typingHello()
     }, []);
 
-    const [imageUrl, setImageUrl] = useState<string>("/images/portfolio3.jpg")
-
-    useEffect(() => {
-        const imageSlider = async () => {
-            let i = 1
-            while (true) {
-                setImageUrl(BasePath+  "/images/portfolio" + i.toString() + ".jpg")
-                i = (i + 1) % 3 + 1
-                await sleep(10000)
-            }
-        }
-        imageSlider()
-    }, []);
-
-    const handleClick = (e: FormEvent<HTMLParagraphElement>, i: number) => {
-        setImageUrl(BasePath + "/images/portfolio" + i.toString() + ".jpg")
-    }
-
     return (
         <>
             <div className={"bg-white flex flex-col items-center justify-center min-h-screen min-w-full"}>
                 <main className={"bg-white min-h-screen min-w-full"}>
-                    <HeaderComponent />
-                    <div
-                        className={"flex flex-row min-h-min min-w-min shadow-2xl shadow-emerald-300 items-center justify-start self-center m-16"}>
-                        <img className={"m-6 shadow-2xl slide-img"} src={imageUrl} alt={"image"}/>
-                        <div className={"flex flex-col min-h-min"}>
-                            <p onClick={(e) => handleClick(e, 3)}
-                               className={"hover:underline text-emerald-600 text-4xl m-3"}>My ctf</p>
-                            <p onClick={(e) => handleClick(e, 2)}
-                               className={"hover:underline text-emerald-600 text-4xl m-3"}>My THM</p>
-                            <p onClick={(e) => handleClick(e, 1)}
-                               className={"hover:underline text-emerald-600 text-4xl m-3"}>My skills</p>
+                    <HeaderComponent/>
+                    <div style={{position: "relative", height: 550, overflow: "hidden"}}
+                         className={"items-center justify-center"}>
+                        <img src={BasePath + "/images/pic2.JPG"} alt={"pic"}
+                             style={{objectFit: "cover", objectPosition: "center", width: "100%", height: "100%"}}/>
+
+                        <div style={{position: "absolute", bottom: 0, width: "100%"}}>
+                            <svg className="waves" xmlns="http://www.w3.org/2000/svg"
+                                 xmlnsXlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+                                <defs>
+                                    <path id="gentle-wave"
+                                          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                                </defs>
+                                <g className="parallax">
+                                    <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff"/>
+                                </g>
+                            </svg>
                         </div>
                     </div>
-                    <div className={"flex flex-col items-center justify-center"}>
-                        <div className={"flex flex-col m-16"}>
-                            <p className={"text-8xl animate-pulse"}>{hello} <span
-                                className={"text-emerald-600"}>{world}</span></p>
-                        </div>
-                        <div className={"flex flex-col m-2"}>
-                            <p className={"text-2xl"}>No exception, only known error</p>
-                        </div>
-                        <div className={"p-2 flex flex-col border-t-2 border-t-emerald-500"}>
-                            <p className={"text-xl"}>
-                                <span className={"text-2xl bold text-emerald-600"}>0x1 Greetings!</span><br/>
-                                Welcome to my portfolio! Nice to meet you travelers.<br/>
-                                I'm **REDACTED**, call oneself as @k0080.<br/>
-                                Under graduate student in Japan.<br/><br/>
-                                <span className={"text-2xl bold text-emerald-600"}>0x2 Activity -ctf-</span><br/>
-                                I often play Capture the Flag and mainly solve pwn.<br/>
-                                Member of team SUSHI1ST, the Japan's top student CTF team.<br/>
-                                Look <Link href={"/ctf"} className={"text-emerald-600 hover:underline"}>here</Link> to
-                                check my ctf history.<br/><br/>
-                                <span className={"text-2xl bold text-emerald-600"}>0x3 Activity -developing-</span><br/>
-                                Sometime, develop an application for hackathon.<br/>
-                                My product is <Link href={"#"}
-                                                    className={"text-emerald-600 hover:underline"}>here</Link>!<br/>
-                                Make secure to all of my application!<br/><br/>
-                                <span className={"text-2xl bold text-emerald-600"}>0x4 Idle</span><br/>
-                                The subtitle "No exception, only known error" is my favorite word.<br/>
-                                This idea is hardly effected by Golang.There's no exception.<br/>
-                                Only the known error exists in not only code, but also all of my life.<br/><br/>
-                                <span className={"text-2xl bold text-emerald-600"}>0x5 Contact me!</span><br/>
-                                If you want to contact to me, check my github!<br/>
-                            </p>
-                        </div>
-                        <div className={"p-2"}>
-                            <p className={"text-3xl text-transparent"}>{flag}</p>
-                        </div>
+                    <div className={"flex flex-col items-center mt-2"}>
+                        <p className={"md:text-8xl sm:text-6xl text-3xl animate-pulse"}>{hello} <span
+                            className={"text-emerald-600"}>{world}</span></p>
+                    </div>
+
+                    <div className={"flex flex-col m-2 items-center"}>
+                        <p className={"text-2xl text-emerald-600"}>Blog</p>
+                    </div>
+
+                    <div className={"flex flex-grow flex-auto border-t-2 border-t-emerald-500"}/>
+                    <div className={"flex mb-6 w-full flex-col items-center flex-grow"} id={"blog"}>
+                        {
+                            blogData.map((data, index) => (
+                                <BlogCard
+                                    key = {"blogCard_"+data.title+index.toString()}
+                                    title={data.title} image={data.image}
+                                          description={data.description}
+                                          link={data.link}/>
+                            ))
+                        }
                     </div>
                 </main>
             </div>
@@ -113,6 +92,73 @@ export default function Home() {
                         width: 55%;
                         height: 55%;
                         object-fit: cover;
+                    }
+
+                    .waves {
+                        position: relative;
+                        width: 100%;
+                        height: 15vh;
+                        margin-bottom: -7px; /*Fix for safari gap*/
+                        min-height: 100px;
+                        max-height: 150px;
+                    }
+
+                    .content {
+                        position: relative;
+                        height: 20vh;
+                        text-align: center;
+                        background-color: white;
+                    }
+
+                    /* Animation */
+
+                    .parallax > use {
+                        animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+                    }
+
+                    .parallax > use:nth-child(1) {
+                        animation-delay: -2s;
+                        animation-duration: 7s;
+                    }
+
+                    .parallax > use:nth-child(2) {
+                        animation-delay: -3s;
+                        animation-duration: 10s;
+                    }
+
+                    .parallax > use:nth-child(3) {
+                        animation-delay: -4s;
+                        animation-duration: 13s;
+                    }
+
+                    .parallax > use:nth-child(4) {
+                        animation-delay: -5s;
+                        animation-duration: 20s;
+                    }
+
+                    @keyframes move-forever {
+                        0% {
+                            transform: translate3d(-90px, 0, 0);
+                        }
+                        100% {
+                            transform: translate3d(85px, 0, 0);
+                        }
+                    }
+
+                    /*Shrinking for mobile*/
+                    @media (max-width: 768px) {
+                        .waves {
+                            height: 40px;
+                            min-height: 40px;
+                        }
+
+                        .content {
+                            height: 30vh;
+                        }
+
+                        h1 {
+                            font-size: 24px;
+                        }
                     }
                 `}
             </style>
