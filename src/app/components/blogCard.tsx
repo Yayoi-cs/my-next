@@ -19,7 +19,7 @@ const BlogCard: React.FC<blogCardArgs> = ({title, image, description, link}) => 
     return (
         <div
             onClick={nav}
-            className={"flex m-2 flex-row w-4/5 max-h-44 md:w-2/3 items-center rounded-2xl shadow-2xl shadow-emerald-300 hover:shadow-2xl hover:shadow-emerald-800"}>
+            className={"flex m-2 flex-row w-4/5 max-h-44 lg:w-1/2 md:w-2/3 items-center rounded-2xl shadow-2xl shadow-emerald-300 hover:shadow-2xl hover:shadow-emerald-800"}>
             <div className={"flex w-2/5"}>
                 <Image src={BasePath + image} alt={"img"} layout={"responsive"} width={200} height={100}
                        className={"rounded-l-2xl max-h-44"}/>
