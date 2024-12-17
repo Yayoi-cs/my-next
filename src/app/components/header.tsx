@@ -21,11 +21,6 @@ const HeaderComponent: React.FC = () => {
                 </Link>
             </div>
             <div className={"p-4 rounded-3xl text-white"}>
-                <Link href={"/blog"} className={"hover:underline"}>
-                    Blog
-                </Link>
-            </div>
-            <div className={"p-4 rounded-3xl text-white"}>
                 <Link href={"/product"} className={"hover:underline"}>
                     Product
                 </Link>

@@ -8,48 +8,31 @@ interface CTFCardProps {
     altText: string;
     participant: string;
     rank: string;
-    description: string;
 }
 
-const CTFCard: React.FC<CTFCardProps> = ({title, imgSrc, altText, participant, rank,description}) => {
+const CTFCard: React.FC<CTFCardProps> = ({title, imgSrc, altText, participant, rank}) => {
     return (
-        <div>
+        <div className={"flex flex-col"}>
             <span className={"text-3xl text-emerald-600"}>{title}</span>
             <br/>
-            <br/>
-            <div className={"flex flex-row items-center"}>
+            <br />
+            <div className={"flex md:flex-row flex-col md:items-center"}>
                 <img
                     src={BasePath+imgSrc}
                     alt={altText}
-                    className={"ctf-img shadow-emerald-300 shadow-2xl"}
+                    className={"md:w-1/2 w-4/5 shadow-emerald-300 shadow-2xl"}
                 />
-                <div className={"flex flex-col m-5 p-5 border-l-2 border-l-emerald-600"}>
+                <div className={"flex flex-col md:items-center flex-row md:m-5 p-5 md:border-l-2 md:border-t-0 border-l-emerald-600"}>
                     {participant !== "" ? (
-                            <p className={"text-2xl"}>{participant}</p>
+                            <p className={"text-2xl md:block hidden"}>{participant}</p>
                         )
                         : null
                     }
                     <p className={"text-emerald-600 text-4xl"}>{rank}</p>
-                    {description !== "" ? (
-                            <p className={"text-xl"}>{participant}</p>
-                        )
-                        : null
-                    }
                 </div>
             </div>
             <br/>
             <br/>
-            <br/>
-            <style jsx>
-                {`
-                    .ctf-img {
-                        display: block;
-                        width: 50%;
-                        height: 50%;
-                        object-fit: cover;
-                    }
-                `}
-            </style>
         </div>
     );
 };

@@ -137,7 +137,6 @@ export default function Home() {
                                     altText={ctf.altText}
                                     participant={ctf.participant}
                                     rank={ctf.rank}
-                                    description={""}
                                 />
                             ))}
                         </div>
@@ -156,7 +155,6 @@ export default function Home() {
                                     altText={badge.altText}
                                     participant={badge.participant}
                                     rank={badge.rank}
-                                    description={""}
                                 />
                             ))}
                             <span className={"text-3xl bold text-emerald-600"}>0x2 Completed Rooms</span><br/><br/>
