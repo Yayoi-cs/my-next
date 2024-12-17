@@ -19,16 +19,16 @@ const BlogCard: React.FC<blogCardArgs> = ({title, image, description, link}) => 
     return (
         <div
             onClick={nav}
-            className={"flex m-2 flex-row w-4/5 max-h-44 lg:w-1/2 md:w-2/3 items-center rounded-2xl shadow-2xl shadow-emerald-300 hover:shadow-2xl hover:shadow-emerald-800"}>
-            <div className={"flex w-2/5"}>
-                <Image src={BasePath + image} alt={"img"} layout={"responsive"} width={200} height={100}
-                       className={"rounded-l-2xl max-h-44"}/>
+            className={"flex m-5 overflow-hidden flex-row w-4/5 max-h-40 lg:w-1/2 md:w-2/3 items-center rounded-2xl shadow-2xl shadow-emerald-300 hover:shadow-2xl hover:shadow-emerald-800"}>
+            <div className={"flex w-2/5 object-cover overflow-hidden"}>
+                <Image src={BasePath + image} alt={"img"} width={400} height={300}
+                       className={"rounded-l-2xl object-cover overflow-hidden flex w-full h-auto object-contain"}/>
             </div>
-            <div className={"flex flex-col p-5 w-3/5"}>
-                <p className={"md:text-2xl text-2xl font-bold text-emerald-600"}>{title}</p>
+            <div className={"flex mb:p-5 ps-2 flex-col w-3/5"}>
+                <p className={"md:text-2xl text-lg md:font-bold text-emerald-600"}>{title}</p>
                 {
                     description.map((desc,index) => (
-                        <p key={"ctf-description"+index.toString()+title} className={"md:text-xl text-xl overflow-hidden sm:block md:block hidden"}>{desc}</p>
+                        <p key={"ctf-description"+index.toString()+title} className={"md:text-xl overflow-hidden sm:block md:block hidden"}>{desc}</p>
                     ))
                 }
             </div>
