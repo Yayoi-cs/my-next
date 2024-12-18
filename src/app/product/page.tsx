@@ -28,24 +28,8 @@ export default function Contact() {
                             <p className={"text-2xl"}>B3 A C00L C35T0R</p>
                         </div>
                         {productData.map((data,index) => (
-                            <BlogCard title={data.title} image={data.image} description={data.description} link={data.link}/>
+                            <BlogCard key={"productData_"+data.title} title={data.title} image={data.image} description={data.description} link={data.link}/>
                         ))}
-                        <div className={"p-5 flex flex-wrap items-center justify-center"}>
-                            <div className={"flex flex-col shadow-2xl shadow-emerald-300 h-48 w-64 p-4 m-3 rounded-2xl"}>
-                                <span className={"text-2xl text-emerald-600"}>0x8</span>
-                                <p className={"text-emerald-600 text-2xl"}>Board game</p>
-                                <div className={"flex flex-row items-center"}>
-                                    <div className={"flex flex-col border-t-2 border-t-emerald-600"}>
-                                        <p >Board game hardware with arduino!</p>
-                                        <br />
-                                        <div className={"flex flex-row items-center"}>
-                                            <TbBrandCpp className={"text-xl text-emerald-600 m-1"}/>
-                                            <SiArduino className={"text-xl text-emerald-600 m-1"}/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </main>
             </div>

@@ -29,18 +29,24 @@ export const productData: blogCardArgs[] = [
         title: "Rsa Oracle",
         image: "/images/goLogoAqua.png",
         description: ["Golang rsa oracle server"],
-        link: "https://github.com/MyRsaOracle"
+        link: "https://github.com/Yayoi-cs/MyRsaOracle"
     },
     {
         title: "Tcp Clients",
         image: "/images/cargo.png",
         description: ["Tcp client applications"],
-        link: "https://github.com/TcpClients"
+        link: "https://github.com/Yayoi-cs/TcpClients"
     },
     {
         title: "Code Typing",
         image: "/images/codeTyping.png",
         description: ["You wanna be a nice programmer?"],
-        link: "https://github.com/myProcessing"
+        link: "https://github.com/Yayoi-cs/myProcessing"
+    },
+    {
+        title: "Board game",
+        image: "/images/arduino.png",
+        description: ["Hardware program with arduino"],
+        link: "https://github.com/Yayoi-cs/Arduino"
     }
 ]
