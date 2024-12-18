@@ -1,8 +1,14 @@
 "use client";
 
+import nextConfig from "../../../next.config.mjs";
+
+const BasePath = nextConfig.basePath || ""
 import Link from "next/link";
 import CTFCard from "@/app/components/ctfimagecard";
 import HeaderComponent from "@/app/components/header"
+import {thmData} from "@/app/ctf/thmData";
+import BlogCard from "@/app/components/blogCard";
+import {badgeData} from "@/app/ctf/badgeData";
 
 export default function Home() {
 
@@ -49,28 +55,28 @@ export default function Home() {
             participant: "Solo @ k0080",
             rank: "17th"
         },
-				{
+        {
             title: "0x7 IERAE CTF 2024",
             imgSrc: "/images/ierae.png",
             altText: "ierae image",
             participant: "Team : SUSH1st",
             rank: "4th"
         },
-				{
+        {
             title: "0x8 JPN-UKR CTF",
             imgSrc: "/images/jpn-ukraina.jpg",
             altText: "jpn-ukraina image",
             participant: "Team : SUSH1st",
             rank: "5th"
         },
-				{
+        {
             title: "0x8 AlpacaHack Round4",
             imgSrc: "/images/alpaca4.png",
             altText: "Alpaca4 image",
             participant: "Solo @ k0080",
             rank: "36th"
         },
-				{
+        {
             title: "0x9 SECCON13",
             imgSrc: "/images/seccon13.png",
             altText: "seccon13 image",
@@ -80,172 +86,154 @@ export default function Home() {
 
     ].reverse();
 
-		//ctfData = ctfData.reverse()
+    //ctfData = ctfData.reverse()
 
-    const badgeData = [
-        {
-            title: "7 day streak",
-            imgSrc: "/images/k0080-badges-7-day-streak.png",
-            altText: "pico image",
-            participant: "",
-            rank: "7 day streak"
-        },
-        {
-            title: "Hash Cracker",
-            imgSrc: "/images/k0080-badges-hash-cracker.png",
-            altText: "wani image",
-            participant: "",
-            rank: "Hash Cracker"
-        },
-        {
-            title: "OhSINT",
-            imgSrc: "/images/k0080-badges-ohsint.png",
-            altText: "diver image",
-            participant: "",
-            rank: "OhSINT"
-        },
-        {
-            title: "cat linux.txt",
-            imgSrc: "/images/k0080-badges-terminaled.png",
-            altText: "ctf4b image",
-            participant: "",
-            rank: "cat linux.txt"
-        }
-    ];
 
     return (
         <>
             <div className={"bg-white flex flex-col items-center justify-center min-h-screen"}>
                 <main className={"bg-white min-h-screen min-w-full"}>
-                    <HeaderComponent />
-                    <div className={"flex flex-col items-center justify-center"}>
-                        <div className={"flex flex-col m-16"}>
-                            <p className={"text-8xl animate-pulse text-emerald-600"}>Topic</p>
-                        </div>
-                        <p className={"p-2"}>Writeup & Article is also <Link href={"/blog"}
-                                                                             className={"text-emerald-600 hover:underline"}>here</Link>!
-                        </p>
-                        <div className={"flex flex-col m-2"}>
-                            <p className={"text-2xl"}>B3 A G00D H4CK3R -CTF-</p>
-                        </div>
-                        <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
-                            {ctfData.map((ctf, index) => (
-                                <CTFCard
-									key={ctf.title}
-                                    title={ctf.title}
-                                    imgSrc={ctf.imgSrc}
-                                    altText={ctf.altText}
-                                    participant={ctf.participant}
-                                    rank={ctf.rank}
-                                />
-                            ))}
-                        </div>
-                        <div className={"flex flex-col m-2"}>
-                            <p className={"text-2xl"}>B3 A 1NT3ll3CTU41 H4CK3R -<a
-                                href={"https://tryhackme.com/p/k0080"}
-                                className={"text-emerald-600 hover:underline"}>THM</a>-</p>
-                        </div>
-                        <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
-                            <span className={"text-3xl bold text-emerald-600"}>0x1 Badges</span><br/><br/>
-                            {badgeData.map((badge, index) => (
-                                <CTFCard
-                                    key={index}
-                                    title={badge.title}
-                                    imgSrc={badge.imgSrc}
-                                    altText={badge.altText}
-                                    participant={badge.participant}
-                                    rank={badge.rank}
-                                />
-                            ))}
-                            <span className={"text-3xl bold text-emerald-600"}>0x2 Completed Rooms</span><br/><br/>
-                            <a href={"https://tryhackme.com/r/room/x8664arch"}
-                               className={"text-emerald-600 hover:underline m-1"}>[x86 Architecture
-                                Overview](https://tryhackme.com/r/room/x8664arch) </a>
-                            <a href={"https://tryhackme.com/r/room/becomeahackeroa"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Become a
-                                Hacker](https://tryhackme.com/r/room/becomeahackeroa) </a>
-                            <a href={"https://tryhackme.com/r/room/introtodockerk8pdqk"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Intro to
-                                Docker](https://tryhackme.com/r/room/introtodockerk8pdqk) </a>
-                            <a href={"https://tryhackme.com/r/room/introtooffensivesecurity"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Intro to Offensive
-                                Security](https://tryhackme.com/r/room/introtooffensivesecurity) </a>
-                            <a href={"https://tryhackme.com/r/room/h4cked"}
-                               className={"text-emerald-600 hover:underline m-1"}>[h4cked](https://tryhackme.com/r/room/h4cked) </a>
-                            <a href={"https://tryhackme.com/r/room/encryptioncrypto101"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Encryption - Crypto
-                                101](https://tryhackme.com/r/room/encryptioncrypto101) </a>
-                            <a href={"https://tryhackme.com/r/room/tutorial"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Tutorial](https://tryhackme.com/r/room/tutorial) </a>
-                            <a href={"https://tryhackme.com/r/room/reverselfiles"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Reversing
-                                ELF](https://tryhackme.com/r/room/reverselfiles) </a>
-                            <a href={"https://tryhackme.com/r/room/easyctf"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Simple
-                                CTF](https://tryhackme.com/r/room/easyctf) </a>
-                            <a href={"https://tryhackme.com/r/room/c4ptur3th3fl4g"}
-                               className={"text-emerald-600 hover:underline m-1"}>[c4ptur3-th3-fl4g](https://tryhackme.com/r/room/c4ptur3th3fl4g) </a>
-                            <a href={"https://tryhackme.com/r/room/ohsint"}
-                               className={"text-emerald-600 hover:underline m-1"}>[OhSINT](https://tryhackme.com/r/room/ohsint) </a>
-                            <a href={"https://tryhackme.com/r/room/careersincyber"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Careers in
-                                Cyber](https://tryhackme.com/r/room/careersincyber) </a>
-                            <a href={"https://tryhackme.com/r/room/defensivesecurity"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Intro to Defensive
-                                Security](https://tryhackme.com/r/room/defensivesecurity) </a>
-                            <a href={"https://tryhackme.com/r/room/introwebapplicationsecurity"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Web Application
-                                Security](https://tryhackme.com/r/room/introwebapplicationsecurity) </a>
-                            <a href={"https://tryhackme.com/r/room/introdigitalforensics"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Intro to Digital
-                                Forensics](https://tryhackme.com/r/room/introdigitalforensics) </a>
-                            <a href={"https://tryhackme.com/r/room/metasploitintro"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Metasploit:
-                                Introduction](https://tryhackme.com/r/room/metasploitintro) </a>
-                            <a href={"https://tryhackme.com/r/room/vulnerabilities101"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Vulnerabilities
-                                101](https://tryhackme.com/r/room/vulnerabilities101) </a>
-                            <a href={"https://tryhackme.com/r/room/pentestingfundamentals"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Pentesting
-                                Fundamentals](https://tryhackme.com/r/room/pentestingfundamentals) </a>
-                            <a href={"https://tryhackme.com/r/room/beginnerpathintro"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Learning Cyber
-                                Security](https://tryhackme.com/r/room/beginnerpathintro) </a>
-                            <a href={"https://tryhackme.com/r/room/linuxfundamentalspart1"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Linux Fundamentals
-                                Part1](https://tryhackme.com/r/room/linuxfundamentalspart1) </a>
-                            <a href={"https://tryhackme.com/r/room/basicpentestingjt"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Basic
-                                Pentesting](https://tryhackme.com/r/room/basicpentestingjt) </a>
-                            <a href={"https://tryhackme.com/r/room/registrypersistencedetection"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Registry Persistence
-                                Detection](https://tryhackme.com/r/room/registrypersistencedetection)</a>
-                            <a href={"https://tryhackme.com/r/room/historyofmalware"}
-                               className={"text-emerald-600 hover:underline m-1"}>[History of
-                                Malware](https://tryhackme.com/r/room/historyofmalware)</a>
-                            <a href={"https://tryhackme.com/r/room/agentsudoctf"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Agent
-                                Sudo](https://tryhackme.com/r/room/agentsudoctf) </a>
-                            <a href={"https://tryhackme.com/r/room/crackthehash"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Crack the
-                                hash](https://tryhackme.com/r/room/crackthehash) </a>
-                            <a href={"https://tryhackme.com/r/room/hypervisorinternals"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Hypervisor 
-															 Internals](https://tryhackme.com/r/room/hypervisorinternals) </a>
-                             <a href={"https://tryhackme.com/r/room/hostedhypervisors"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Hosted 
-															 Hypervisors](https://tryhackme.com/r/room/hostedhypervisors) </a>
-                              <a href={"https://tryhackme.com/r/room/introtocoldsystemforensics"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Intro to Cold System 
-															 Forensics](https://tryhackme.com/r/room/introtocoldsystemforensics) </a>
-                               <a href={"https://tryhackme.com/r/room/forensicimaging"}
-                               className={"text-emerald-600 hover:underline m-1"}>[Forensic 
-															 Imaging](https://tryhackme.com/r/room/forensicimaging) </a>
- 
+                    <HeaderComponent/>
+                    <div style={{position: "relative", height: 550, overflow: "hidden"}}
+                         className={"items-center justify-center"}>
+                        <img src={BasePath + "/images/ida.png"} alt={"pic"}
+                             style={{objectFit: "cover", objectPosition: "center", width: "100%", height: "100%"}}/>
+
+                        <div style={{position: "absolute", bottom: 0, width: "100%"}}>
+                            <svg className="waves" xmlns="http://www.w3.org/2000/svg"
+                                 xmlnsXlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+                                <defs>
+                                    <path id="gentle-wave"
+                                          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                                </defs>
+                                <g className="parallax">
+                                    <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                                    <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff"/>
+                                </g>
+                            </svg>
                         </div>
                     </div>
+                    <div className={"flex flex-col items-center mb-2 mt-2"}>
+                        <p className={"md:text-8xl sm:text-6xl text-3xl animate-pulse"}>Capture<span
+                            className={"text-emerald-600"}>the</span>Flag</p>
+                    </div>
+                    <div className={"p-12 flex flex-col border-t-2 border-t-emerald-500"}>
+                        {ctfData.map((ctf, index) => (
+                            <CTFCard
+                                key={"ctf_" + ctf.title}
+                                title={ctf.title}
+                                imgSrc={ctf.imgSrc}
+                                altText={ctf.altText}
+                                participant={ctf.participant}
+                                rank={ctf.rank}
+                            />
+                        ))}
+                    </div>
+                    <div className={"flex flex-col m-2"}>
+                        <p className={"text-2xl"}>Try <a
+                            href={"https://tryhackme.com/p/k0080"}
+                            className={"text-emerald-600 hover:underline"}> Hack </a> Me</p>
+                    </div>
+                    <div className={"p-5 flex flex-col border-t-2 border-t-emerald-500"}>
+                        <span className={"text-2xl bold text-emerald-600"}>0x1 Badges</span>
+                        {badgeData.map((data, index) => (
+                            <BlogCard
+                                key={"badge_" + data.title}
+                                title={data.title}
+                                image={data.image}
+                                description={["", "", ""]}
+                                link={"#"}
+                            />
+                        ))}
+                        <span className={"text-2xl bold text-emerald-600"}>0x2 Completed Rooms</span>
+                        {
+                            thmData.map((data, index) => (
+                                <BlogCard key={"thmData_" + data.title} title={data.title} image={data.image}
+                                          description={data.description} link={data.link}/>
+                            ))
+                        }
+                    </div>
                 </main>
+                <style jsx>
+                    {`
+                        .slide-img {
+                            display: block;
+                            width: 55%;
+                            height: 55%;
+                            object-fit: cover;
+                        }
 
+                        .waves {
+                            position: relative;
+                            width: 100%;
+                            height: 15vh;
+                            margin-bottom: -7px; /*Fix for safari gap*/
+                            min-height: 100px;
+                            max-height: 150px;
+                        }
+
+                        .content {
+                            position: relative;
+                            height: 20vh;
+                            text-align: center;
+                            background-color: white;
+                        }
+
+                        /* Animation */
+
+                        .parallax > use {
+                            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+                        }
+
+                        .parallax > use:nth-child(1) {
+                            animation-delay: -2s;
+                            animation-duration: 7s;
+                        }
+
+                        .parallax > use:nth-child(2) {
+                            animation-delay: -3s;
+                            animation-duration: 10s;
+                        }
+
+                        .parallax > use:nth-child(3) {
+                            animation-delay: -4s;
+                            animation-duration: 13s;
+                        }
+
+                        .parallax > use:nth-child(4) {
+                            animation-delay: -5s;
+                            animation-duration: 20s;
+                        }
+
+                        @keyframes move-forever {
+                            0% {
+                                transform: translate3d(-90px, 0, 0);
+                            }
+                            100% {
+                                transform: translate3d(85px, 0, 0);
+                            }
+                        }
+
+                        /*Shrinking for mobile*/
+                        @media (max-width: 768px) {
+                            .waves {
+                                height: 40px;
+                                min-height: 40px;
+                            }
+
+                            .content {
+                                height: 30vh;
+                            }
+
+                            h1 {
+                                font-size: 24px;
+                            }
+                        }
+                    `}
+                </style>
             </div>
         </>
     )

@@ -15,7 +15,6 @@ const CTFCard: React.FC<CTFCardProps> = ({title, imgSrc, altText, participant, r
         <div className={"flex flex-col"}>
             <span className={"text-3xl text-emerald-600"}>{title}</span>
             <br/>
-            <br />
             <div className={"flex md:flex-row flex-col md:items-center"}>
                 <img
                     src={BasePath+imgSrc}
@@ -24,11 +23,11 @@ const CTFCard: React.FC<CTFCardProps> = ({title, imgSrc, altText, participant, r
                 />
                 <div className={"flex flex-col md:items-center flex-row md:m-5 p-5 md:border-l-2 md:border-t-0 border-l-emerald-600"}>
                     {participant !== "" ? (
-                            <p className={"text-2xl md:block hidden"}>{participant}</p>
+                            <p className={"md:text-2xl text-xl"}>{participant}</p>
                         )
                         : null
                     }
-                    <p className={"text-emerald-600 text-4xl"}>{rank}</p>
+                    <p className={"text-emerald-600 md:text-4xl text-xl"}>Rank: {rank}</p>
                 </div>
             </div>
             <br/>
