@@ -83,7 +83,20 @@ export default function Home() {
             participant: "Team : ierae",
             rank: "2nd🥈"
         },
-
+        {
+            title: "0xa TSG CTF",
+            imgSrc: "/images/tsg.png",
+            altText: "tsg ctf image",
+            participant: "Team : SUSH1st",
+            rank: "3rd"
+        },
+        {
+            title: "0xb AlpacaHack Round8",
+            imgSrc: "/images/alpaca8.png",
+            altText: "AlpacaHack Round8 image",
+            participant: "Solo @ k0080",
+            rank: "21st"
+        },
     ].reverse();
 
     //ctfData = ctfData.reverse()

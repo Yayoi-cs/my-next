@@ -7,8 +7,8 @@ const BasePath = nextConfig.basePath || ""
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-    title: "portfolio",
-    description: "portfolio",
+    title: "__tsune_start_main",
+    description: "__blog",
 };
 
 export default function RootLayout({

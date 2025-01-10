@@ -1,5 +1,23 @@
 import {blogCardArgs} from "@/app/components/blogCard";
 export const blogData:blogCardArgs[] = [
+     {
+        title: "Baby heap exploit",
+        image: "/images/babyHeapExploit.png",
+        description: ["basic heap exploit with my own chal"],
+        link:"https://hackmd.io/@tsuneki/H1RUzEOBkg"
+     },
+     {
+        title: "Intro to SMT Solver",
+        image: "/images/introToSMTSolver.png",
+        description: ["How to SMT"],
+        link:"https://hackmd.io/@tsuneki/BynzAaIrkx"
+     },
+     {
+        title: "AlpacaHack Round8 Writeup",
+        image: "/images/alpaca8_2.png",
+        description: ["reversing challenge"],
+        link:"https://hackmd.io/@tsuneki/SJClekl8yg"
+    },
     {
         title: "UrmiaCTF Writeup",
         image: "/images/urmia.png",

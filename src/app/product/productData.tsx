@@ -2,6 +2,12 @@ import {blogCardArgs} from "@/app/components/blogCard";
 
 export const productData: blogCardArgs[] = [
     {
+        title: "godb",
+        image: "/images/godb.png",
+        description: ["The fastest debugger"],
+        link: "https://github.com/Yayoi-cs/godb"
+    },
+    {
         title: "AchyU",
         image: "/images/achyu1.png",
         description: ["HackU Tokyo Vol2", "Team AchyU", "Next.js & Golang"],
