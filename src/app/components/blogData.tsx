@@ -3,25 +3,25 @@ export const blogData:blogCardArgs[] = [
      {
         title: "Baby heap exploit",
         image: "/images/babyHeapExploit.png",
-        description: ["basic heap exploit with my own chal"],
+        description: ["basic heap exploit with my own chal","libc-leak and got a shell"],
         link:"https://hackmd.io/@tsuneki/H1RUzEOBkg"
      },
      {
         title: "Intro to SMT Solver",
         image: "/images/introToSMTSolver.png",
-        description: ["How to SMT"],
+        description: ["How to SMT","I tried z3-solver with CTF challenges"],
         link:"https://hackmd.io/@tsuneki/BynzAaIrkx"
      },
      {
         title: "AlpacaHack Round8 Writeup",
         image: "/images/alpaca8_2.png",
-        description: ["reversing challenge"],
+        description: ["reversing challenge","AlpacaHack Round8 WriteUps"],
         link:"https://hackmd.io/@tsuneki/SJClekl8yg"
     },
     {
         title: "UrmiaCTF Writeup",
         image: "/images/urmia.png",
-        description: ["pwn:loop-up"],
+        description: ["pwn:loop-up","UrmiaCTF2024 WriteUps!"],
         link:"https://hackmd.io/@tsuneki/HyOELF220"
     },
     {
@@ -45,31 +45,31 @@ export const blogData:blogCardArgs[] = [
     {
         title: "DUCTF Writeup",
         image: "/images/ductf.png",
-        description: ["pwn-vector overflow"],
+        description: ["DUCTF2024 WriteUps!","pwn-vector overflow"],
         link:"https://hackmd.io/@tsuneki/SJl--TRwwC"
     },
     {
         title: "UIUCTF Writeup",
         image: "/images/uiuctf.png",
-        description: ["crypto:matrix challenge"],
+        description: ["crypto:matrix challenge","UIU CTF 2024 WriteUps!"],
         link:"https://hackmd.io/@tsuneki/Bk6jdo1w0"
     },
     {
         title: "CTF4b Writeup",
         image: "/images/ctf4b.png",
-        description: ["seccon beginners 2024"],
+        description: ["seccon beginners 2024","We got 17th place"],
         link:"https://hackmd.io/@tsuneki/rJg8eehHA"
     },
     {
         title: "DiverOSINT Writeup",
         image: "/images/diver.png",
-        description: ["OSINT CTF!!"],
+        description: ["Diver OSINT CTF2024 WriteUps!","We got 10th place!"],
         link:"https://hackmd.io/@YumaOchi/rJ52sqGH0"
     },
     {
         title: "PicoCTF Writeup",
         image: "/images/pico.png",
-        description: ["5825pt,top2%"],
+        description: ["PicoCTF2024 WriteUps!","5825pt,top2%","Full score in 2 categories"],
         link:"https://github.com/Yayoi-cs/PicoCTF2024WriteUps/blob/main/Writerside/topics/OverView.md"
     }
 ]

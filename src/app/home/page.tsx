@@ -8,6 +8,8 @@ const BasePath = nextConfig.basePath || ""
 import HeaderComponent from "@/app/components/header";
 import BlogCard from "@/app/components/blogCard";
 import {blogData} from "@/app/components/blogData";
+import TestCard from "@/app/components/testCard";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -42,9 +44,10 @@ export default function Home() {
                     <HeaderComponent/>
                     <div style={{position: "relative", height: 550, overflow: "hidden"}}
                          className={"items-center justify-center"}>
-                        <img src={BasePath + "/images/pic2.JPG"} alt={"pic"}
-                             style={{objectFit: "cover", objectPosition: "center", width: "100%", height: "100%"}}/>
-
+                        <Image src={BasePath + "/images/pic2.JPG"} alt={"pic"}
+                               layout={"fill"}
+                               objectFit={"cover"}
+                               />
                         <div style={{position: "absolute", bottom: 0, width: "100%"}}>
                             <svg className="waves" xmlns="http://www.w3.org/2000/svg"
                                  xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -75,9 +78,9 @@ export default function Home() {
                     <div className={"flex mb-6 w-full flex-col items-center flex-grow"} id={"blog"}>
                         {
                             blogData.map((data, index) => (
-                                <BlogCard
+                                <TestCard
                                     key = {"blogCard_"+data.title+index.toString()}
-                                    title={data.title} image={data.image}
+                                    title={data.title}
                                           description={data.description}
                                           link={data.link}/>
                             ))

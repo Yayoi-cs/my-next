@@ -1,14 +1,5 @@
 "use client"
 
-import Link from "next/link";
-import Image from "next/image";
-import {SiArduino, SiCsharp, SiKotlin, SiProcessingfoundation} from "react-icons/si";
-import {RiNextjsFill, RiTailwindCssFill} from "react-icons/ri";
-import {BiLogoGoLang} from "react-icons/bi";
-import {GrGraphQl} from "react-icons/gr";
-import {FaAndroid, FaJava, FaPython, FaRust} from "react-icons/fa";
-import {TbBrandCpp} from "react-icons/tb";
-import CTFCard from "@/app/components/ctfimagecard";
 import HeaderComponent from "@/app/components/header";
 import BlogCard from "@/app/components/blogCard";
 import {productData} from "@/app/product/productData";
