@@ -10,6 +10,7 @@ import BlogCard from "@/app/components/blogCard";
 import {blogData} from "@/app/components/blogData";
 import TestCard from "@/app/components/testCard";
 import Image from "next/image";
+import LoadComponent from "@/app/home/loadComponent";
 
 export default function Home() {
 
@@ -20,6 +21,21 @@ export default function Home() {
         return new Promise((resolve) => setTimeout(resolve, ms))
     }
 
+    const [isLoading, setIsLoading] = useState(true)
+    const [isVisible, setIsVisible] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+
+            setTimeout(() => {
+                setIsVisible(false)
+            }, 500)
+
+        }, 1000)
+
+        return () => clearTimeout(timer)
+    }, []);
 
     useEffect(() => {
         const typingHello = async () => {
@@ -37,54 +53,60 @@ export default function Home() {
         typingHello()
     }, []);
 
+
     return (
         <>
-            <div className={"bg-white flex flex-col items-center justify-center min-h-screen min-w-full"}>
+            <div className={`bg-white ${isVisible ? "overflow-hidden" : ""} relative flex flex-col items-center justify-center min-h-screen min-w-full`}>
                 <main className={"bg-white min-h-screen min-w-full"}>
-                    <HeaderComponent/>
-                    <div style={{position: "relative", height: 550, overflow: "hidden"}}
-                         className={"items-center justify-center"}>
-                        <Image src={BasePath + "/images/pic2.JPG"} alt={"pic"}
-                               layout={"fill"}
-                               objectFit={"cover"}
-                               />
-                        <div style={{position: "absolute", bottom: 0, width: "100%"}}>
-                            <svg className="waves" xmlns="http://www.w3.org/2000/svg"
-                                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                                 viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
-                                <defs>
-                                    <path id="gentle-wave"
-                                          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
-                                </defs>
-                                <g className="parallax">
-                                    <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"/>
-                                    <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
-                                    <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
-                                    <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff"/>
-                                </g>
-                            </svg>
+                    <div className={`absolute z-10 ${isLoading ? "bg-white" : "bg-transparent"} min-h-screen min-w-full ${!isVisible ? `invisible`: `visible`}`}>
+                        <LoadComponent isLoading={isLoading}/>
+                    </div>
+                    <div className={"absolute z-0 bg-white min-h-screen min-w-full"}>
+                        <HeaderComponent/>
+                        <div style={{position: "relative", height: 550, overflow: "hidden"}}
+                             className={"items-center justify-center"}>
+                            <Image src={BasePath + "/images/pic2.JPG"} alt={"pic"}
+                                   layout={"fill"}
+                                   objectFit={"cover"}
+                            />
+                            <div style={{position: "absolute", bottom: 0, width: "100%"}}>
+                                <svg className="waves" xmlns="http://www.w3.org/2000/svg"
+                                     xmlnsXlink="http://www.w3.org/1999/xlink"
+                                     viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+                                    <defs>
+                                        <path id="gentle-wave"
+                                              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                                    </defs>
+                                    <g className="parallax">
+                                        <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"/>
+                                        <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                                        <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                                        <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff"/>
+                                    </g>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div className={"flex flex-col items-center mt-2"}>
-                        <p className={"md:text-8xl sm:text-6xl text-3xl animate-pulse"}>{hello} <span
-                            className={"text-emerald-600"}>{world}</span></p>
-                    </div>
+                        <div className={"flex flex-col items-center mt-2"}>
+                            <p className={"md:text-8xl sm:text-6xl text-3xl "}>{hello} <span
+                                className={"text-emerald-600"}>{world}</span></p>
+                        </div>
 
-                    <div className={"flex flex-col m-2 items-center"}>
-                        <p className={"text-2xl text-emerald-600"}>Blog</p>
-                    </div>
+                        <div className={"flex flex-col m-2 items-center"}>
+                            <p className={"text-2xl text-emerald-600"}>Blog</p>
+                        </div>
 
-                    <div className={"flex flex-grow flex-auto border-t-2 border-t-emerald-500"}/>
-                    <div className={"flex mb-6 w-full flex-col items-center flex-grow"} id={"blog"}>
-                        {
-                            blogData.map((data, index) => (
-                                <TestCard
-                                    key = {"blogCard_"+data.title+index.toString()}
-                                    title={data.title}
-                                          description={data.description}
-                                          link={data.link}/>
-                            ))
-                        }
+                        <div className={"flex flex-grow flex-auto border-t-2 border-t-emerald-500"}/>
+                        <div className={"flex mb-6 w-full flex-col items-center flex-grow"} id={"blog"}>
+                            {
+                                blogData.map((data, index) => (
+                                    <TestCard
+                                        key={"blogCard_" + data.title + index.toString()}
+                                        title={data.title}
+                                        description={data.description}
+                                        link={data.link}/>
+                                ))
+                            }
+                        </div>
                     </div>
                 </main>
             </div>
