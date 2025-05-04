@@ -7,7 +7,7 @@ const BasePath = nextConfig.basePath || ""
 const HeaderComponent: React.FC = () => {
     return (
 
-        <div className={"items-center flex flex-row min-h-min bg-emerald-600"}>
+        <div className={"items-center absolute z-10 flex w-full  flex-row min-h-min bg-emerald-600/90 rounded-b-2xl"}>
             <Image src={BasePath + "/favicons/favicon-32x32.png"} alt={"icon"} className={"m-2"} width={30}
                    height={30}/>
             <div className={"p-4 rounded-3xl text-white"}>
@@ -16,13 +16,8 @@ const HeaderComponent: React.FC = () => {
                 </Link>
             </div>
             <div className={"p-4 rounded-3xl text-white"}>
-                <Link href={"/ctf"} className={"hover:underline"}>
-                    CTF
-                </Link>
-            </div>
-            <div className={"p-4 rounded-3xl text-white"}>
-                <Link href={"/product"} className={"hover:underline"}>
-                    Product
+                <Link href={"/whoami"} className={"hover:underline"}>
+                    whoami
                 </Link>
             </div>
         </div>
