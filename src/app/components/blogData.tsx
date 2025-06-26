@@ -2,6 +2,16 @@ import {blogCardArgs} from "@/app/components/blogCard";
 
 export const blogData: blogCardArgs[] = [
     {
+        title: "Midnight Flag CTF Final Writeup",
+        description: ["writeup for grey ctf 2025"],
+        link: "https://yayoi-cs.github.io/blog/midnight-ctf-2025-final.html"
+    },
+    {
+        title: "Grey CTF 2025 Writeup",
+        description: ["writeup for grey ctf 2025"],
+        link: "https://yayoi-cs.github.io/blog/greyctf-2025.html"
+    },
+    {
         title: "Midnight Flag CTF Quals Writeup",
         description: ["Our team, m01nm01n will go to the final round!"],
         link: "https://yayoi-cs.github.io/blog/midnight-ctf-2025.html"

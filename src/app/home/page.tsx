@@ -11,11 +11,9 @@ import {blogData} from "@/app/components/blogData";
 import TestCard from "@/app/components/testCard";
 import Image from "next/image";
 import LoadComponent from "@/app/home/loadComponent";
+import XMLTreeViewer from "@/app/components/XMLTreeViewer";
 
 export default function Home() {
-
-    const [hello, setHello] = useState<string>("")
-    const [world, setWorld] = useState<string>("")
 
     const sleep = async (ms: number) => {
         return new Promise((resolve) => setTimeout(resolve, ms))
@@ -36,23 +34,6 @@ export default function Home() {
 
         return () => clearTimeout(timer)
     }, []);
-
-    useEffect(() => {
-        const typingHello = async () => {
-            const finalHello: string = "Hello,"
-            for (let i: number = 0; i < finalHello.length; i++) {
-                setHello(finalHello.substring(0, i + 1))
-                await sleep(100)
-            }
-            const finalWorld: string = "World!!"
-            for (let i: number = 0; i < finalWorld.length; i++) {
-                setWorld(finalWorld.substring(0, i + 1))
-                await sleep(100)
-            }
-        }
-        typingHello()
-    }, []);
-
 
     return (
         <>
@@ -87,15 +68,20 @@ export default function Home() {
                             </div>
                         </div>
                         <div className={"flex flex-col items-center mt-2"}>
-                            <p className={"md:text-8xl sm:text-6xl text-3xl "}>{hello} <span
-                                className={"text-emerald-600"}>{world}</span></p>
+                            <p className={"md:text-8xl sm:text-6xl text-3xl "}><span
+                                className={"text-emerald-600"}>pwned</span> by <span
+                                className={"text-emerald-600"}>tsune</span></p>
                         </div>
 
                         <div className={"flex flex-col m-2 items-center"}>
                             <p className={"text-2xl text-emerald-600"}>Blog</p>
                         </div>
 
-                        <div className={"flex flex-grow flex-auto border-t-2 border-t-emerald-500"}/>
+
+                        <div className={"flex w-auto md:flex-row flex-col border-t-2 border-t-emerald-500"}>
+
+                        <div className={"flex md:w-3/4 w-full md:border-r-2 border-0"}>
+                        <div className={"flex flex-grow flex-auto"}/>
                         <div className={"flex mb-6 w-full flex-col items-center flex-grow"} id={"blog"}>
                             {
                                 blogData.map((data, index) => (
@@ -106,6 +92,9 @@ export default function Home() {
                                         link={data.link}/>
                                 ))
                             }
+                        </div>
+                        </div>
+                        <XMLTreeViewer />
                         </div>
                     </div>
                 </main>
