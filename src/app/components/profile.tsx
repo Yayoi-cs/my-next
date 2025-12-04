@@ -233,14 +233,14 @@ const CraftUIComponent = () => {
       title: 'whoami',
       description: 'tsune, ctf player mainly solve pwn, rev. whatever the challenge target such kernel or userland, just I pwn it.',
       icon: <CraftIcon />,
-      imageUrl: '/images/pic2.JPG'
+      imageUrl: '/images/pic2_mini.jpg'
     },
     {
       id: 'team',
       title: 'team',
       description: 'I am currently belonging to m01nm01n, sush1st, ierae. If you found those teams in CTF scoreboard, checkout my name!',
       icon: <CSSAnimationIcon />,
-      imageUrl: '/images/pic3.JPG'
+      imageUrl: '/images/pic3.jpg'
     },
     {
       id: 'language',
