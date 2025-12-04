@@ -46,7 +46,7 @@ export default function Home() {
                         <HeaderComponent/>
                         <div style={{position: "relative", height: 550, overflow: "hidden"}}
                              className={"items-center justify-center"}>
-                            <Image src={BasePath + "/images/pic2.JPG"} alt={"pic"}
+                            <Image src={BasePath + "/images/pic2.jpg"} alt={"pic"}
                                    layout={"fill"}
                                    objectFit={"cover"}
                             />
