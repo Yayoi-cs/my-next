@@ -68,7 +68,7 @@ const TreeNodeComponent: React.FC<TreeNodeProps> = ({
   const getUrl = (topic?: string): string | null => {
     if (!topic || !topic.endsWith('.md')) return null;
     const nameWithoutMd = topic.replace('.md', '').toLowerCase();
-    return `https://yayoi-cs.github.io/blog/${nameWithoutMd}.html`;
+    return `https://blog.reg.rip/${nameWithoutMd}.html`;
   };
 
   const url: string | null = getUrl(node.topic);
