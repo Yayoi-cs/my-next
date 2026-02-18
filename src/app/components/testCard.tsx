@@ -28,16 +28,12 @@ const BlogCard: React.FC<blogCardArgs> = ({title, description, link}) => {
             <div className={"flex relative w-3/5"}>
                 <div className={"absolute flex-col h-full p-2 flex w-full z-0 justify-center"}>
                     {
-                        description.map((desc, index) => (
-                            <p key={"ctf-description" + index.toString() + title}
-                               className={"md:text-2xl text-xl font-bold text-white text-wrap overflow-hidden"}>{desc}</p>
-                        ))
+                        <p className={"md:text-2xl text-xl font-bold text-white text-wrap overflow-hidden"}>{link}</p>
                     }
                 </div>
                 <div className={"absolute h-full flex wrap-right w-full z-10"}>
                     <div className={"flex mb:p-5 ps-2 flex-col justify-center"}>
                         <p className={"text-2xl font-bold text-emerald-600"}>{title}</p>
-                        <p className={"md:text-lg md:block hidden underline text-xl text-wrap overflow-hidden"}>{link}</p>
                     </div>
                 </div>
             </div>
